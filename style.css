@@ -1,3 +1,91 @@
+/* General reusable classes */
+
+.page-body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(website-achtergrond.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    color: rgb(61, 43, 226);
+    padding-top: 75px;
+    font-size: 75px;
+    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.subpage-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 6px;
+    border-radius: 20px;
+    border-color: rgb(61, 43, 226);
+    width: 300px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
+}
+
+.subpage-block:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.subpage-block-img {
+    border-radius: 12px;
+    width: 250px;
+}
+
+.subpage-block-text {
+    color: rgb(61, 43, 226);
+    margin-top: -80px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hidden-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
+    color: rgb(43, 107, 226);
+    font-style: normal;
+    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
+    font-weight: 600;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show hidden text on hover */
+.subpage-block:hover ~ .hidden-text-container .hidden-text {
+    opacity: 1;
+}
+
+/* Specific margins for subpage blocks */
+.margin-right {
+    margin-right: 300px;
+}
+
+.margin-left {
+    margin-left: 300px;
+}
+
+
 /* index.html */
 
 .index-body {
@@ -30,9 +118,7 @@
     margin-bottom: 200px;
 }
 
-/* index afkomst block */
-
-.index-afkomst {
+.index-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,18 +133,18 @@
     box-shadow: 0.5px 0.5px 10px 1px blueviolet;
 }
 
-[alt="afkomst"] {
+.index-block-img {
     border-radius: 12px;
     width: 150px;
 }
 
-.index-afkomst:hover {
+.index-block:hover {
     background-color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transform: translateY(-5px);
 }
 
-.index-afkomst-text {
+.index-block-text {
     color: rgb(151, 52, 243);
     margin-top: 30px;
     font-size: 40px;
@@ -67,496 +153,57 @@
     text-decoration: none;
 }
 
-.index-afkomst-text:hover {
+.index-block-text:hover {
     color: rgb(247, 54, 247);
 }
 
-/* index hobbies block */
-
-.index-hobbies {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: blueviolet;
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.index-hobbies-margin {
     margin-left: 30px;
     margin-right: 30px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px blueviolet;
 }
 
-[alt="hobbies"] {
-    border-radius: 12px;
-    width: 150px;
-}
-
-.index-hobbies:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.index-hobbies-text {
-    color: rgb(151, 52, 243);
-    margin-top: 30px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.index-hobbies-text:hover {
-    color: rgb(247, 54, 247);
-}
-
-/* index school block */
-
-.index-school {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: blueviolet;
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px blueviolet;
-}
-
-[alt="school"] {
-    border-radius: 12px;
-    width: 150px;
-}
-
-.index-school:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.index-school-text {
-    color: rgb(151, 52, 243);
-    margin-top: 30px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.index-school-text:hover {
-    color: rgb(247, 54, 247);
-}
 
 /* afkomst.html */
-
-.afkomst-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(website-achtergrond.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-}
-
 .afkomst-afkomst {
-    display: flex;
-    justify-content: center;
-    color: rgb(61, 43, 226);
     margin-left: -30px;
-    padding-top: 75px;
-    font-size: 75px;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-}
-
-.afkomst-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 200px;
-}
-
-/* afkomst aramean block */
-
-.afkomst-aramean {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-right: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="aramean-vlag"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.afkomst-aramean-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.afkomst-aramean:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.afkomst-hidden-aramean {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    color: rgb(43, 107, 226);
-    font-style: normal;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-    font-weight: 600;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.afkomst-aramean:hover ~ .afkomst-hidden-text .afkomst-hidden-aramean {
-    opacity: 1;
-}
-
-
-/* afkomst syrian block */
-
-.afkomst-syrian {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-left: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="syrian-vlag"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.afkomst-syrian-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.afkomst-syrian:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.afkomst-hidden-syrian {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    color: rgb(43, 107, 226);
-    font-style: normal;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-    font-weight: 600;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.afkomst-syrian:hover ~ .afkomst-hidden-text .afkomst-hidden-syrian {
-    opacity: 1;
 }
 
 /* hobbies.html */
-
-.hobbies-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(website-achtergrond.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-}
-
 .hobbies-hobbies {
-    display: flex;
-    justify-content: center;
-    color: rgb(61, 43, 226);
     margin-left: -10px;
-    padding-top: 75px;
-    font-size: 75px;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
 }
 
 .hobbies-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 200px;
     margin-top: 100px;
-}
-
-/* hobbies series block */
-
-.hobbies-series {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-right: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="series"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.hobbies-series-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.hobbies-series:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.hobbies-hidden-series {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    color: rgb(43, 107, 226);
-    font-style: normal;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-    font-weight: 600;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.hobbies-series:hover ~ .hobbies-hidden-text .hobbies-hidden-series {
-    opacity: 1;
-}
-
-
-/* hobbies gamen block */
-
-.hobbies-gamen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-left: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="gamen"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.hobbies-gamen-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.hobbies-gamen:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.hobbies-hidden-gamen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    color: rgb(43, 107, 226);
-    font-style: normal;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-    font-weight: 600;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.hobbies-gamen:hover ~ .hobbies-hidden-text .hobbies-hidden-gamen {
-    opacity: 1;
 }
 
 /* school.html */
-
-.school-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(website-achtergrond.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-}
-
 .school-school {
-    display: flex;
-    justify-content: center;
-    color: rgb(61, 43, 226);
     margin-left: -10px;
-    padding-top: 75px;
-    font-size: 75px;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
 }
 
 .school-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 200px;
     margin-top: 100px;
 }
 
-/* school basisschool block */
-
-.school-basisschool {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-right: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="basisschool"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.school-basisschool-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.school-basisschool:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.school-hidden-basisschool {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    color: rgb(43, 107, 226);
-    font-style: normal;
-    text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
-    font-weight: 600;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.school-basisschool:hover ~ .school-hidden-text .school-hidden-basisschool {
+/* This is a bit of a hack to make the general rule work for all pages.
+   The specificity of the hover now needs to target the correct hidden text.
+   This relies on the HTML structure remaining consistent.
+*/
+.afkomst-aramean:hover ~ .afkomst-hidden-text .afkomst-hidden-aramean,
+.afkomst-syrian:hover ~ .afkomst-hidden-text .afkomst-hidden-syrian,
+.hobbies-series:hover ~ .hobbies-hidden-text .hobbies-hidden-series,
+.hobbies-gamen:hover ~ .hobbies-hidden-text .hobbies-hidden-gamen,
+.school-basisschool:hover ~ .school-hidden-text .school-hidden-basisschool,
+.school-middelbareschool:hover ~ .school-hidden-text .school-hidden-middelbareschool {
     opacity: 1;
 }
 
-
-/* school middelbareschool block */
-
-.school-middelbareschool {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 6px;
-    border-radius: 20px;
-    border-color: rgb(61, 43, 226);
-    width: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-left: 300px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0.5px 0.5px 10px 1px rgb(61, 43, 226);
-}
-
-[alt="middelbareschool"] {
-    border-radius: 12px;
-    width: 250px;
-}
-
-.school-middelbareschool-text {
-    color: rgb(61, 43, 226);
-    margin-top: -80px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.school-middelbareschool:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
+.afkomst-hidden-aramean,
+.afkomst-hidden-syrian,
+.hobbies-hidden-series,
+.hobbies-hidden-gamen,
+.school-hidden-basisschool,
 .school-hidden-middelbareschool {
     position: absolute;
     top: 50%;
@@ -571,8 +218,4 @@
     text-shadow: 0 0 10px rgb(43, 107, 226), 0 0 20px rgb(43, 107, 226), 0 0 30px rgb(43, 107, 226);
     font-weight: 600;
     transition: opacity 0.3s ease-in-out;
-}
-
-.school-middelbareschool:hover ~ .school-hidden-text .school-hidden-middelbareschool {
-    opacity: 1;
 }
